@@ -16,7 +16,7 @@ exports.getPosts = (req,res) => {
     if( 403 !== token){
         jwt.verify(token, 'secretkey', (err, authData) => {
             if(err) {
-              res.sendStatus(403);
+                res.send("unauthorize access");
             }
         });
     } 
@@ -41,7 +41,7 @@ exports.addPost = (req,res) => {
     if( 403 !== token){
         jwt.verify(token, 'secretkey', (err, authData) => {
             if(err) {
-              res.sendStatus(403);
+              res.send("unauthorize access");
             }
         });
     }
@@ -93,7 +93,7 @@ exports.editPost = (req,res) => {
     if( 403 !== token){
         jwt.verify(token, 'secretkey', (err, authData) => {
             if(err) {
-              res.sendStatus(403);
+                res.send("unauthorize access");
             }
         });
     }
